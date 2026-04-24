@@ -7,6 +7,12 @@ function adicionar() {
     let nomeProduto = produto.split('-')[0];
     let valorUnitario = produto.split('R$')[1];
     let quantidade = document.getElementById('quantidade').value;
+    
+    if (quantidade <= 0) {
+        alert('Erro, a quantidade não é valida')
+        document.getElementById('quantidade').value = '';
+        return
+    }
 
     let preco = quantidade * valorUnitario;
 
